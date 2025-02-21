@@ -2370,7 +2370,7 @@ function library:init()
                                 if bind.flag then
                                     library.flags[bind.flag] = bind.state;
                                 end
-                              --  self.callback(false)
+                                self.callback(false)
                                 local display = bind.state; if bind.invertindicator then display = not bind.state; end
                                 bind.indicatorValue:SetEnabled(display and not bind.noindicator);
                             end
@@ -2426,7 +2426,7 @@ function library:init()
                                 end
                             end
                         end)
-    
+                        --[[
                         utility:Connection(inputservice.InputEnded, function(inp)
                             if bind.bind ~= 'none' then
                                 if inp.KeyCode == bind.bind or inp.UserInputType == bind.bind then
@@ -2442,7 +2442,7 @@ function library:init()
                                     end
                                 end
                             end
-                        end)
+                        end)]]
     
                         tooltip(bind);
                         bind:SetBind(bind.bind);
