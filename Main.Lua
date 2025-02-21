@@ -2297,7 +2297,7 @@ function library:init()
                             if bind.flag then
                                 library.flags[bind.flag] = bind.state;
                             end
-                          --  bind.callback(true)
+                            bind.callback(true)
                             local display = bind.state; if bind.invertindicator then display = not bind.state; end
                             bind.indicatorValue:SetEnabled(display and not bind.noindicator);
                             bind.indicatorValue:SetKey((bind.text == nil or bind.text == '') and (bind.flag == nil and 'unknown' or bind.flag) or bind.text); -- this is so dumb
@@ -2349,7 +2349,7 @@ function library:init()
                                 if bind.flag then
                                     library.flags[bind.flag] = false;
                                 end
-                               -- bind.callback(false);
+                                bind.callback(false);
                             end
                             local keyName = 'NONE'
                             self.bind = (keybind and keybind) or keybind or self.bind
@@ -2359,7 +2359,7 @@ function library:init()
                                 if bind.flag then
                                     library.flags[bind.flag] = bind.state;
                                 end
-                               -- self.callback(true)
+                                self.callback(true)
                                 local display = bind.state; if bind.invertindicator then display = not bind.state; end
                                 bind.indicatorValue:SetEnabled(display and not bind.noindicator);
                             else
@@ -2426,7 +2426,7 @@ function library:init()
                                 end
                             end
                         end)
-                        --[[
+                       =
                         utility:Connection(inputservice.InputEnded, function(inp)
                             if bind.bind ~= 'none' then
                                 if inp.KeyCode == bind.bind or inp.UserInputType == bind.bind then
@@ -2442,7 +2442,7 @@ function library:init()
                                     end
                                 end
                             end
-                        end)]]
+                        end)
     
                         tooltip(bind);
                         bind:SetBind(bind.bind);
