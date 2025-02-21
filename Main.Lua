@@ -2426,7 +2426,7 @@ function library:init()
                                 end
                             end
                         end)
-                       =
+    
                         utility:Connection(inputservice.InputEnded, function(inp)
                             if bind.bind ~= 'none' then
                                 if inp.KeyCode == bind.bind or inp.UserInputType == bind.bind then
