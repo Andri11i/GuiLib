@@ -8,6 +8,13 @@ Edited by azot
 
 local startupArgs = ({...})[1] or {}
 
+if getgenv().Config == nil then
+    getgenv().Config = {
+        Version = '1.0',
+        Invite = 'yourdiscordinvite',
+    }
+end
+
 if getgenv().library ~= nil then
     getgenv().library:Unload();
 end
