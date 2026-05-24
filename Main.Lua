@@ -4440,12 +4440,12 @@ function library:init()
         self.watermark = {
             objects = {};
             text = {
-                {"zotov", true},
-                {"V"..getgenv().Config.Version, true},
-                {getgenv().luaguardvars.DiscordName, true},
-                {'0 fps', true},
-                {'0ms', true},
-            };
+        {"zotov", true},
+        {"V"..(getgenv().Config and getgenv().Config.Version or '1.0'), true},
+        {(getgenv().luaguardvars and getgenv().luaguardvars.DiscordName or 'unknown'), true},
+        {'0 fps', true},
+        {'0ms', true},
+    };
             lock = 'custom';
             position = newUDim2(0,0,0,0);
             refreshrate = 25;
